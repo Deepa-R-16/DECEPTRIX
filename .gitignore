@@ -5,3 +5,6 @@ dist/
 backend/uploads/
 backend/reports/
 *.log
+# Generated forensic reports
+*-forensic-report.json
+backend/backend/reports/
