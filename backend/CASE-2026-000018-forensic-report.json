@@ -1,0 +1,151 @@
+{
+  "report_title": "DECEPTRIX Forensic Investigation Report",
+  "generated_by": "DECEPTRIX",
+  "generated_at": "2026-08-13T12:45:28.345Z",
+  "investigation": {
+    "id": "cba56fe6-dc26-4262-9e6a-b585ba4d0ee6",
+    "case_number": "CASE-2026-000018",
+    "title": "Suspicious Content Investigation",
+    "status": "ACTIVE",
+    "severity": "HIGH",
+    "threat_score": 70,
+    "created_at": "2026-08-13T12:18:35.471Z",
+    "updated_at": "2026-08-13T12:18:35.471Z"
+  },
+  "evidence": [
+    {
+      "id": "df395fb8-7345-47af-8f60-3b712976b2ca",
+      "evidence_type": "TEXT",
+      "description": "URGENT! Your bank account will be blocked today. Click immediately to verify your account.",
+      "source": "whatsapp",
+      "file_path": null,
+      "sha256_hash": "ffad2ca015fbc1a8b603df5ac5189dee28c5098407a23e05f4cf1410777c69d3",
+      "collected_at": "2026-08-13T12:18:35.471Z"
+    }
+  ],
+  "ai_analysis": {
+    "id": "e180ceac-ef97-4825-80e2-78e5cb7edba1",
+    "model_name": "DECEPTRIX-Local-Analyzer",
+    "model_version": "1.0",
+    "risk_score": 70,
+    "severity": "HIGH",
+    "confidence": "85.00",
+    "explanation": "The content exhibits 3 detectable manipulation indicator(s), including URGENCY_PRESSURE, AUTHORITY_IMPERSONATION, FEAR_AND_THREAT.",
+    "analyzed_at": "2026-08-13T12:18:35.471Z",
+    "fingerprints": [
+      {
+        "id": "89986810-4e2c-437f-9f3a-22a51227d39b",
+        "technique": "URGENCY_PRESSURE",
+        "confidence": 88,
+        "evidence_quote": "immediately",
+        "reasoning": "The content creates time pressure intended to reduce deliberate decision-making."
+      },
+      {
+        "id": "67dc8131-8a3e-4355-92b4-a779f1ced70d",
+        "technique": "AUTHORITY_IMPERSONATION",
+        "confidence": 82,
+        "evidence_quote": "bank",
+        "reasoning": "The content invokes an authority or institution to increase perceived legitimacy."
+      },
+      {
+        "id": "fd8e74a4-d2c9-4f39-8de7-958707ddc982",
+        "technique": "FEAR_AND_THREAT",
+        "confidence": 86,
+        "evidence_quote": "account will be blocked",
+        "reasoning": "The content uses fear, punishment, or negative consequences to influence the recipient."
+      }
+    ]
+  },
+  "narrative_intelligence": {
+    "nodes": [
+      {
+        "id": "71ba9f35-089e-4dfc-b838-48aa4744a939",
+        "node_type": "CONTENT",
+        "node_value": "URGENT! Your bank account will be blocked today. Click immediately to verify your account.",
+        "platform": "whatsapp",
+        "sha256_hash": null,
+        "first_observed_at": "2026-08-13T12:18:35.471Z",
+        "metadata": {
+          "detection_method": "DECEPTRIX-Narrative-Engine"
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "id": "5dffef1c-649f-4531-9502-42c6939201bb",
+        "source_node_id": "0a7bbadc-ac9d-4b75-a0a7-6f1fbcc6ad4b",
+        "target_node_id": "71ba9f35-089e-4dfc-b838-48aa4744a939",
+        "relationship_type": "SAME_NARRATIVE",
+        "confidence": "100.00",
+        "observed_at": "2026-08-13T12:18:35.471Z"
+      },
+      {
+        "id": "f60e28a0-12bc-4bb7-ac03-73d399ef70c8",
+        "source_node_id": "3a612cc1-abb1-420c-9c3a-566d9b948bee",
+        "target_node_id": "71ba9f35-089e-4dfc-b838-48aa4744a939",
+        "relationship_type": "MUTATION",
+        "confidence": "58.82",
+        "observed_at": "2026-08-13T12:18:35.471Z"
+      },
+      {
+        "id": "51fe5173-2c18-4a45-9935-6a78ec6968f4",
+        "source_node_id": "150d06fd-0388-4c0e-b2ca-9a4078f8a932",
+        "target_node_id": "71ba9f35-089e-4dfc-b838-48aa4744a939",
+        "relationship_type": "MUTATION",
+        "confidence": "62.50",
+        "observed_at": "2026-08-13T12:18:35.471Z"
+      },
+      {
+        "id": "1b03806b-d6b2-4524-8e42-e11e87ba9446",
+        "source_node_id": "4ef34d82-2de9-4a4b-b0d4-0073bd4bb07d",
+        "target_node_id": "71ba9f35-089e-4dfc-b838-48aa4744a939",
+        "relationship_type": "RELATED_NARRATIVE",
+        "confidence": "44.44",
+        "observed_at": "2026-08-13T12:18:35.471Z"
+      },
+      {
+        "id": "96f70356-c394-4215-a7fb-01ae804bb8d3",
+        "source_node_id": "9be7c374-41e7-4cb3-8fdc-ac161ec24f51",
+        "target_node_id": "71ba9f35-089e-4dfc-b838-48aa4744a939",
+        "relationship_type": "RELATED_NARRATIVE",
+        "confidence": "44.44",
+        "observed_at": "2026-08-13T12:18:35.471Z"
+      }
+    ]
+  },
+  "threat_prediction": {
+    "id": "1a7e360c-e05b-4e2a-a4ed-c0f142271706",
+    "threat_probability": "80.57",
+    "propagation_velocity": "RAPID",
+    "target_profile": {
+      "audience": "High-engagement and emotionally reactive users",
+      "platforms": [
+        "Manual submission",
+        "whatsapp"
+      ],
+      "risk_factors": [
+        "3 manipulation technique(s) detected",
+        "5 related narrative relationship(s) detected",
+        "Elevated deception risk score"
+      ]
+    },
+    "prediction_reasoning": "The investigation contains multiple deception indicators and evidence of narrative propagation. The combination suggests a high likelihood of continued dissemination.",
+    "created_at": "2026-08-13T12:18:35.471Z"
+  },
+  "chain_of_custody": [
+    {
+      "id": "389ce4e0-1db9-4ead-bc86-19c347c7441e",
+      "evidence_id": "df395fb8-7345-47af-8f60-3b712976b2ca",
+      "action": "EVIDENCE_COLLECTED",
+      "actor": "DECEPTRIX",
+      "details": "Evidence collected from whatsapp. SHA-256: ffad2ca015fbc1a8b603df5ac5189dee28c5098407a23e05f4cf1410777c69d3",
+      "timestamp": "2026-08-13T12:18:35.471Z"
+    }
+  ],
+  "conclusion": {
+    "severity": "HIGH",
+    "threat_score": 70,
+    "threat_probability": 80.57,
+    "propagation_velocity": "RAPID"
+  }
+}
