@@ -23,10 +23,11 @@ CREATE TABLE IF NOT EXISTS users (
 -- 2. INVESTIGATIONS
 -- ============================================================
 
-CREATE TABLE IF NOT EXISTS investigations (
-    CREATE SEQUENCE IF NOT EXISTS investigations_case_number_seq
+CREATE SEQUENCE IF NOT EXISTS investigations_case_number_seq
 START WITH 1
 INCREMENT BY 1;
+
+CREATE TABLE IF NOT EXISTS investigations (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     case_number VARCHAR(50) UNIQUE NOT NULL DEFAULT (
     'CASE-' ||
