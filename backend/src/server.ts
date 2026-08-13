@@ -50,12 +50,14 @@ app.get("/api/health/database", async (_req, res) => {
       database: result.rows[0].database,
       timestamp: result.rows[0].timestamp,
     });
-  } catch (error) {
+  } catch (error: any) {
   console.error("DATABASE HEALTH CHECK FAILED:", error);
 
   res.status(500).json({
     status: "error",
     message: "Database connection failed",
+    error: error?.message || String(error),
+    code: error?.code || null,
   });
 }
 });
